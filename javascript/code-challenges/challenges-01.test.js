@@ -64,6 +64,7 @@ const greeting = (word) => {
 };
 let words=['a','b','c'];
 
+
 const speaker = (words, callback) => {
   let newArr=[];
   words.forEach(item =>{
