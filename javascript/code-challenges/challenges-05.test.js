@@ -11,13 +11,8 @@ should convert to ["Jane Doe", "James Bond"]
 Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
-
 const toLastNames = people => {
-let newArr=[];
-people.forEach(element => {
-  newArr.push(`${element.firstName} ${element.lastName}`);
-})
-return newArr;
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -28,10 +23,7 @@ Write a function named addValues that, given an array of numbers as input, uses 
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
-  let sum = arr.reduce((acc,val,i)=>{
-    acc = acc + val;
-    return acc;
-  },5);
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
