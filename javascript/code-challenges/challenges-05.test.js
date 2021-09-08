@@ -12,7 +12,8 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
-  // Solution code here...
+  let newArr = people.map((element) => element.firstName +' '+ element.lastName);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,6 +25,8 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 const addValues = (arr) => {
   // Solution code here...
+  let newArr = arr.reduce((a, b) => a + b, 0);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,6 +43,8 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 const addPurchases = (arr) => {
   // Solution code here...
+  let newArr = arr.reduce((a, b) => a + b.purchasePrice, 0);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,6 +57,8 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
+  let newArr = arr.reduce((a, b) => a + 1, 0);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,6 +119,9 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  let newArr1 =[];
+  let newArr = arr.reduce((a, b) => newArr1.push(b.name), 0);
+  return newArr1;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -124,6 +134,9 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  let array = str.split('');
+  let newArr = array.reduce((a, b) => b + a,'');
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
