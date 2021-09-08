@@ -25,7 +25,8 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  x=starWarsArr;
+  let newArr = starWarsArr.sort((a, b) => b.height - a.height);
+  return newArr;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,6 +37,8 @@ Write a function named removeThree that takes an index and an array. The functio
 
 const removeThree = (idx, arr) => {
   // Solution code here...
+  arr.splice(idx, 3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,6 +49,8 @@ Write a function named joinArray that takes an array and joins all of the elemen
 
 const joinArray = (arr) => {
   // Solution code here...
+  let newArr = arr.join(" ");
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,7 +69,15 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
-  return result;
+  let newArr = [];
+
+  for (let i = 0; i < str.length; i++) {
+    let newStr = str.substring(i);
+    newArr.push(newStr);
+  }
+  newArr.push("");
+  return newArr;
+  // return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,6 +90,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  let newArr = arr.split("");
+  return newArr;
 };
 
 
@@ -124,7 +139,23 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  
+  recipe.ingredients.map((elemet) => {
+    if (elemet.includes("1 pound")) {
+      result.push(elemet.slice(elemet.indexOf("d") + 2));
+    }
+    if (elemet.includes("sized")) {
+      result.push(elemet.slice(15));
+    }
+    if (elemet.includes("pounds") || elemet.includes("gallons") || elemet.includes("cups")) {
+      result.push(elemet.slice(elemet.indexOf("s") + 2));
+    }
+  });
+
+  //   })
+
   return result;
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
