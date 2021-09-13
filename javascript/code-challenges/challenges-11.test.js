@@ -90,18 +90,17 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
-  let newArr=[];
-  for(let i =0;i <input.length ; i++) {
-    let line='-';
-    for(let j=0; j< input[i].length ; j++){
-      if(input[i]!==''&& input[i]/5==0){
-      line = line +input [i][j]+ ' ';
-     newArr.push(Math.pow(2, input[i][j])) 
-      }
+  let array = input.map((item) => {
+    if(item) {
+      let array2 = item.filter((n) => typeof n === "number" && n % 5 === 0);
+      return array2.map((m) => {
+        return Math.pow(2, m) ;
+      } );
+    } else if (!item){
+      return item ;
     }
-   
-  }
-  return newArr;
+  }) ;
+  return array ;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -168,7 +167,17 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
- 
+  let newArr = data.filter((obj) => {
+    if(obj.gender === "male" || obj.gender === "female") {
+      return obj;
+    }
+  });
+
+  let name = newArr.map((item) => {
+    return item.name;
+  });
+
+  return name.join(" and ");
 
 };
 
